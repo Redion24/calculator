@@ -10,10 +10,11 @@ void division();
 void sq();
 void squareroot();
 void exit();
-
+double calcAvg();
 
 int main()
 {
+    double avg;
     int opt;
     do
     {
@@ -49,6 +50,10 @@ int main()
                 break;
 
             case 7:
+                avg=calcAvg();
+                printf("Average is: %.3lf", avg);
+
+            case 8:
                 exit(0);
                 break;
 
@@ -133,3 +138,23 @@ void squareroot()
     printf (" \n The Square Root of %d is: %f", num1, result);
 }
 
+double calcAvg()
+{
+    double avg;
+    int cnt=0;
+    char num;
+    int sum=0;
+    for(int i=1; 1; i++){
+        printf("\n");
+        printf("Enter the %d number(enter 's' to stop): ", cnt);
+        scanf("%c", &num);
+        scanf("%c", &num);
+        if(num == 's'){
+            break;
+        }
+        int number = (int)num-48;
+        sum += number;
+        cnt++;
+    }
+    return (double)sum/cnt;
+}
